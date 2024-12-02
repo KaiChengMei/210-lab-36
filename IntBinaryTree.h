@@ -34,9 +34,9 @@ public:
    ~IntBinaryTree()    { destroySubTree(root); }
 
    // Public interface for inserting, searching, and removing nodes.
-   void insertNode(string&);
-   bool searchNode(string&);
-   void remove(string&);
+   void insertNode(const string&);
+   bool searchNode(const string&);
+   void remove(const string&);
 
    // Public wrappers for tree traversal functions.
    void displayInOrder() const     {  displayInOrder(root); }
