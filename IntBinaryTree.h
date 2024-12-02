@@ -35,7 +35,7 @@ public:
 
    // Public interface for inserting, searching, and removing nodes.
    void insertNode(const string&);
-   bool searchNode(const string&);
+   bool searchNode(const string&) const;
    void remove(const string&);
 
    // Public wrappers for tree traversal functions.

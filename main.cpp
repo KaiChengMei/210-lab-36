@@ -12,7 +12,6 @@ int main() {
     string code;
     if (!file) {
         cout << "Error open file: " << endl;
-        return 0;
     }
     while (getline(file, code)) {
         tree.insertNode(code);
@@ -30,6 +29,7 @@ int main() {
         cout << "[3] search" << endl;
         cout << "[4] modify records" << endl;
         cout << "[5] exit" << endl;
+        cout << "Enter your choice: ";
         cin >> choice;
 
         switch (choice) {
@@ -49,9 +49,8 @@ int main() {
                 cout << "Enter code to search: ";
                 cin >> a;
                 if (tree.searchNode(a)) {
-                    cout << "founded code.";
-                }
-                else {
+                    cout << "founded code." << endl;
+                } else {
                     cout << "didn't founded code.";
                 }
                 break;
