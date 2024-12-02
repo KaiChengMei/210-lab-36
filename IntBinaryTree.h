@@ -1,6 +1,8 @@
 // Specification file for the IntBinaryTree class
 #ifndef INTBINARYTREE_H
 #define INTBINARYTREE_H
+#include <string>
+using namespace std;
 
 // The IntBinaryTree class manages a binary tree of integers.
 class IntBinaryTree {
@@ -18,7 +20,7 @@ private:
    // Private member functions for internal operations.
    void insert(TreeNode *&, TreeNode *&);
    void destroySubTree(TreeNode *);
-   void deleteNode(int, TreeNode *&);
+   void deleteNode(string, TreeNode *&);
    void makeDeletion(TreeNode *&);
    void displayInOrder(TreeNode *) const;
    void displayPreOrder(TreeNode *) const;
@@ -32,9 +34,9 @@ public:
    ~IntBinaryTree()    { destroySubTree(root); }
 
    // Public interface for inserting, searching, and removing nodes.
-   void insertNode(string);
-   bool searchNode(string);
-   void remove(string);
+   void insertNode(string&);
+   bool searchNode(string&);
+   void remove(string&);
 
    // Public wrappers for tree traversal functions.
    void displayInOrder() const     {  displayInOrder(root); }

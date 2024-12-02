@@ -1,20 +1,21 @@
 #include <iostream>
 #include "IntBinaryTree.h"
 #include <string>
+#include <fstream>
 using namespace std;
 
 int main() {
     IntBinaryTree tree;
 
     // load code
-    ifstream file(codes.txt);
+    ifstream file("codes.txt");
     string code;
     if (!file) {
         cout << "Error open file: " << endl;
         return 0;
     }
     while (getline(file, code)) {
-        tree.insert(code);
+        tree.insertNode(code);
     }
     file.close();
     cout << "Finished loading into BST" << endl;
@@ -29,6 +30,7 @@ int main() {
         cout << "[3] search" << endl;
         cout << "[4] modify records" << endl;
         cout << "[5] exit" << endl;
+        cin >> choice;
 
         switch (choice) {
             case 1:
@@ -52,10 +54,10 @@ int main() {
                 else {
                     cout << "didn't founded code.";
                 }
-                break
+                break;
             case 4:
                 cout << "Display codes in order." << endl;
-                tree.displaInOrder();
+                tree.displayInOrder();
                 break;
             case 5:
                 cout << "Exiting....." << endl;
@@ -65,7 +67,7 @@ int main() {
         }
 
 
-    } while(choice !=5)
-    
+    } while(choice !=5);
+
     return 0;
 }
