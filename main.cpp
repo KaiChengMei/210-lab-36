@@ -44,14 +44,28 @@ int main() {
                 cout << "deleted code." << endl;
                 break;
             case 3:
-            
+                cout << "Enter code to search: ";
+                cin >> a;
+                if (tree.searchNode(a)) {
+                    cout << "founded code.";
+                }
+                else {
+                    cout << "didn't founded code.";
+                }
+                break
             case 4:
+                cout << "Display codes in order." << endl;
+                tree.displaInOrder();
+                break;
             case 5:
+                cout << "Exiting....." << endl;
+                break;
             default:
             cout << "Invalid, please enter 1~5." << endl;
         }
 
 
     } while(choice !=5)
+    
     return 0;
 }
